@@ -31,3 +31,9 @@ Python-driven carrier analytics evaluating UPS operational datasets, zone billin
 * **B.S. in Industrial & Systems Engineering** — Tec de Monterrey
 
 ---
+
+## 📫 Connect with Me
+
+* 🌐 **Portfolio Website:** [rcholico.github.io](https://rcholico.github.io)
+* 💼 **LinkedIn:** [linkedin.com/in/ramon-cholico](https://www.linkedin.com/in/ramon-cholico)
+* 📧 **Email:** `rcholico@hotmail.com` | Rice Email: `rcholico@rice.edu`
