@@ -49,6 +49,11 @@
         .about-box ul { list-style: none; margin-top: 1rem; }
         .about-box li { margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative; }
         .about-box li::before { content: "▹"; position: absolute; left: 0; color: #0075C9; font-weight: bold; }
+        
+        .contact-details { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed var(--border); display: flex; gap: 2rem; flex-wrap: wrap; }
+        .contact-item { font-size: 0.95rem; color: var(--dark); display: flex; align-items: center; gap: 0.5rem; }
+        .contact-item a { color: #0075C9; text-decoration: none; font-weight: 600; }
+        .contact-item a:hover { text-decoration: underline; }
 
         footer { text-align: center; padding: 2rem; color: #64748B; font-size: 0.9rem; border-top: 1px solid var(--border); }
     </style>
@@ -79,6 +84,17 @@
                 <li><strong>Analytics Stack:</strong> Python (Pandas, Scikit-Learn), K-Means Machine Learning, SQL, ProShip APIs, Financial Sensitivity Modeling.</li>
                 <li><strong>Academic Leadership:</strong> TA for RCEL-506 @ Rice University, guiding students in data science for engineering management and AI workflows.</li>
             </ul>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-envelope" style="color: #0075C9;"></i>
+                    <span><strong>Personal Email:</strong> <a href="mailto:rcholico@hotmail.com">rcholico@hotmail.com</a></span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-university" style="color: #00205B;"></i>
+                    <span><strong>Rice University Email:</strong> <a href="mailto:ramon.cholico@rice.edu">ramon.cholico@rice.edu</a></span>
+                </div>
+            </div>
         </div>
 
         <h2 class="section-title">Featured Executive Projects</h2>
@@ -88,7 +104,7 @@
                 <div>
                     <div class="card-header">
                         <i class="fas fa-calculator"></i>
-                        <h3>Global Freight Auditor Selection</h3>
+                        <h3>Global Freight Auditor Selection (Loop vs 7B)</h3>
                     </div>
                     <p>Evaluated multi-currency EMEA freight audit solutions ($23M spend) and enforced strict data ownership/privacy governance.</p>
                 </div>
