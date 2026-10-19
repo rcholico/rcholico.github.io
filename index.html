@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramon G. Cholico | Executive Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00205B; /* Rice Navy */
+            --secondary: #4A777A;
+            --dark: #1E293B;
+            --light: #F8FAFC;
+            --border: #E2E8F0;
+            --card-bg: #FFFFFF;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--light); color: var(--dark); line-height: 1.6; }
+
+        header { background: linear-gradient(135deg, #00153D 0%, #00205B 100%); color: white; padding: 4rem 2rem 3rem; text-align: center; }
+        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 700; }
+        header p { font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto 1.5rem; font-weight: 300; }
+        .links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.2s ease; }
+        .btn-primary { background-color: #0075C9; color: white; }
+        .btn-primary:hover { background-color: #005A9C; }
+        .btn-outline { border: 1px solid rgba(255, 255, 255, 0.4); color: white; }
+        .btn-outline:hover { background-color: rgba(255, 255, 255, 0.1); }
+
+        container { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; display: block; }
+        .section-title { font-size: 1.75rem; color: var(--primary); margin-bottom: 1.5rem; font-weight: 700; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; transition: transform 0.2s ease, box-shadow 0.2s ease; display: flex; flex-direction: column; justify-content: space-between; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); }
+        .card-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+        .card-header i { font-size: 1.5rem; color: #0075C9; }
+        .card h3 { font-size: 1.2rem; color: var(--primary); }
+        .card p { font-size: 0.95rem; color: #475569; margin-bottom: 1rem; flex-grow: 1; }
+        .card-link { display: inline-flex; align-items: center; gap: 0.4rem; color: #0075C9; font-weight: 600; text-decoration: none; font-size: 0.9rem; }
+        .card-link:hover { text-decoration: underline; }
+
+        .about-box { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 2rem; margin-bottom: 3rem; }
+        .about-box ul { list-style: none; margin-top: 1rem; }
+        .about-box li { margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative; }
+        .about-box li::before { content: "▹"; position: absolute; left: 0; color: #0075C9; font-weight: bold; }
+
+        footer { text-align: center; padding: 2rem; color: #64748B; font-size: 0.9rem; border-top: 1px solid var(--border); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ramon G. Cholico</h1>
+        <p>Global Supply Chain Executive | Graduate Teaching Assistant @ Rice University</p>
+        <div class="links">
+            <a href="https://github.com/rcholico" class="btn btn-outline" target="_blank"><i class="fab fa-github"></i> GitHub Profile</a>
+            <a href="https://linkedin.com/in/rcholico" class="btn btn-outline" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="mailto:rcholico@hotmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact Me</a>
+        </div>
+    </header>
+
+    <container>
+        <div class="about-box">
+            <h2 class="section-title">Executive Background</h2>
+            <p>Executive leader with 20+ years optimizing global transportation networks, managing $88M+ logistics spend, and driving data-driven decisions in regulated industries. Currently completing my Master's in Engineering Management & Leadership (Data Science Focus) at Rice University.</p>
+            <ul>
+                <li><strong>Global Logistics & Sourcing:</strong> RFQs, Cross-Border Linehaul Injection, Mode Shifting, Carrier Governance.</li>
+                <li><strong>Analytics Stack:</strong> Python (Pandas, Scikit-Learn), K-Means Machine Learning, SQL, ProShip APIs, Financial Sensitivity Modeling.</li>
+                <li><strong>Academic Leadership:</strong> TA for RCEL-506 @ Rice University, guiding students in software portfolios and AI workflows.</li>
+            </ul>
+        </div>
+
+        <h2 class="section-title">Featured Executive Projects</h2>
+        <div class="grid">
+
+            <div class="card">
+                <div>
+                    <div class="card-header">
+                        <i class="fas fa-user-md"></i>
+                        <h3>Surgical Freight Spend Optimization</h3>
+                    </div>
+                    <p>Express-to-Ground mode shifts & Priority Overnight downgrades ex-Austin, TX ($1.36M annualized savings).</p>
+                </div>
+                <a href="https://github.com/rcholico/Surgical-Freight-Spend-Optimization" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header">
+                        <i class="fas fa-truck-cross-border"></i>
+                        <h3>US-Canada Direct Parcel Injection</h3>
+                    </div>
+                    <p>Sourced direct cross-border linehaul injection with Purolator out of DFW (-19.7% cost-per-shipment).</p>
+                </div>
+                <a href="https://github.com/rcholico/US-Canada-CrossBorder-Purolator-Injection" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header">
+                        <i class="fas fa-ship"></i>
+                        <h3>Global Forwarder Sourcing RFQ</h3>
+                    </div>
+                    <p>Benchmarked CWW, EXI, CHR, and K+N across 826 containers ($8.43M freight savings, -65%).</p>
+                </div>
+                <a href="https://github.com/rcholico/Global-Freight-Forwarder-Procurement-RFQ" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header">
+                        <i class="fas fa-warehouse"></i>
+                        <h3>DC Location Optimization (ML)</h3>
+                    </div>
+                    <p>Unsupervised K-Means clustering on 378K+ shipments to redesign Dr. Comfort DC network.</p>
+                </div>
+                <a href="https://github.com/rcholico/DC-Relocation" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header">
+                        <i class="fas fa-plane"></i>
+                        <h3>US Zone Skipping & Air-Bulk Injection</h3>
+                    </div>
+                    <p>Direct air-bulk and intermodal zone skipping out of San Diego to East Coast (4–6 day transit times).</p>
+                </div>
+                <a href="https://github.com/rcholico/US-Zone-Skipping-Air-Bulk-Optimization" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header">
+                        <i class="fas fa-gas-pump"></i>
+                        <h3>Fuel Surcharge Sensitivity Model</h3>
+                    </div>
+                    <p>Financial risk model tracking Middle East conflict diesel spikes and quantifying $271K+ in FSC exposure.</p>
+                </div>
+                <a href="https://github.com/rcholico/Geopolitical-Risk-Fuel-Sensitivity-Model" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header">
+                        <i class="fas fa-globe-americas"></i>
+                        <h3>Multimodal Transportation Analysis</h3>
+                    </div>
+                    <p>All-Boat vs. Intermodal Rail trade-off modeling across transatlantic trade lanes (-21 days transit time).</p>
+                </div>
+                <a href="https://github.com/rcholico/International-Freight-Network-Analysis" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>UPS Freight & Parcel Analytics</h3>
+                    </div>
+                    <p>Python-driven carrier analytics evaluating UPS operational datasets, zone billing, and Dim weight impact.</p>
+                </div>
+                <a href="https://github.com/rcholico/UPS-SupplyChain-Analytics" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+    </container>
+
+    <footer>
+        <p>© 2026 Ramon G. Cholico | Built with GitHub Pages</p>
+    </footer>
+
+</body>
+</html>
