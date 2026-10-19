@@ -21,6 +21,8 @@ Financial modeling analyzing Middle East conflict impacts across Parcel, LTL, an
 Evaluated All-Boat vs. Intermodal Rail trade-offs across transatlantic trade lanes, achieving up to 21-day lead-time reductions.
 ### 8 [Parcel Supply Chain Analytics](https://github.com/rcholico/Parcel-SupplyChain-Analytics) 
 Python-driven carrier analytics evaluating UPS operational datasets, zone billing structures, dimensional weight cost drivers, and transit SLA performance.
+### 9 [Global Freight Auditor Selection & Requirements Matrix](https://github.com/rcholico/Freight-Auditor-Selection) 
+Strategic Evaluation of Global Freight Audit & Payment (FAP) Platforms, Governance & AI Data Privacy.
 
 ---
 
