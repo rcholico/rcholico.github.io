@@ -4,262 +4,408 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramon G. Cholico | Executive Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0F172A;
-            --card-bg: #1E293B;
-            --card-border: #334155;
-            --accent-blue: #38BDF8;
+            --bg-main: #0B0F17;
+            --surface-card: rgba(18, 24, 38, 0.75);
+            --surface-hover: rgba(26, 35, 56, 0.85);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(56, 189, 248, 0.4);
+            
+            --cyan-glow: #38BDF8;
+            --electric-blue: #0066FF;
+            --accent-gradient: linear-gradient(135deg, #00F2FE 0%, #4FACFE 100%);
             --rice-navy: #00205B;
-            --text-main: #F8FAFC;
-            --text-muted: #94A3B8;
-            --badge-bg: rgba(56, 189, 248, 0.1);
+            
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
         }
-        
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+        body { 
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; 
+            background-color: var(--bg-main); 
+            color: var(--text-primary); 
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 102, 255, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 65%, rgba(56, 189, 248, 0.08) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
 
-        header { background: linear-gradient(135deg, #020617 0%, #00205B 100%); color: white; padding: 4rem 2rem 3.5rem; border-bottom: 1px solid var(--card-border); }
-        .header-content { max-width: 1050px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: wrap; text-align: left; }
-        .profile-img { width: 160px; height: 160px; border-radius: 50%; border: 3px solid var(--accent-blue); box-shadow: 0 0 25px rgba(56, 189, 248, 0.25); object-fit: cover; flex-shrink: 0; }
-        .header-text { flex: 1; min-width: 280px; }
-        .header-text h1 { font-size: 2.6rem; margin-bottom: 0.4rem; font-weight: 800; tracking: -0.02em; }
-        .header-text p { font-size: 1.2rem; color: var(--accent-blue); margin-bottom: 1.25rem; font-weight: 400; }
-        .links { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+        /* Ambient Glow Header */
+        header { 
+            position: relative;
+            padding: 4.5rem 2rem 4rem; 
+            border-bottom: 1px solid var(--card-border); 
+            background: rgba(11, 15, 23, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .header-content { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            gap: 3rem; 
+            flex-wrap: wrap; 
+        }
+        .profile-container { position: relative; }
+        .profile-img { 
+            width: 155px; 
+            height: 155px; 
+            border-radius: 50%; 
+            padding: 4px;
+            background: var(--accent-gradient);
+            object-fit: cover; 
+            box-shadow: 0 0 35px rgba(0, 242, 254, 0.25);
+        }
+        .header-text { flex: 1; min-width: 300px; }
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            color: var(--cyan-glow);
+            font-size: 0.825rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .status-dot { width: 7px; height: 7px; background: var(--cyan-glow); border-radius: 50%; box-shadow: 0 0 8px var(--cyan-glow); }
+
+        .header-text h1 { font-size: 2.8rem; margin-bottom: 0.4rem; font-weight: 800; letter-spacing: -0.03em; }
+        .header-text p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1.5rem; font-weight: 400; }
         
-        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1.3rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.25 ease; }
-        .btn-primary { background-color: var(--accent-blue); color: #0F172A; }
-        .btn-primary:hover { background-color: #7DD3FC; transform: translateY(-2px); }
-        .btn-outline { border: 1px solid var(--card-border); color: var(--text-main); background: rgba(255,255,255,0.03); }
-        .btn-outline:hover { border-color: var(--accent-blue); color: var(--accent-blue); transform: translateY(-2px); }
+        .links { display: flex; gap: 0.85rem; flex-wrap: wrap; }
+        .btn { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 0.6rem; 
+            padding: 0.7rem 1.4rem; 
+            border-radius: 10px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); 
+        }
+        .btn-primary { 
+            background: var(--accent-gradient); 
+            color: #040810; 
+            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(0, 242, 254, 0.45); }
+        .btn-outline { 
+            border: 1px solid var(--card-border); 
+            color: var(--text-primary); 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(10px);
+        }
+        .btn-outline:hover { border-color: var(--cyan-glow); color: var(--cyan-glow); background: rgba(56, 189, 248, 0.05); transform: translateY(-2px); }
 
-        .container { max-width: 1150px; margin: 0 auto; padding: 3.5rem 1.5rem; display: block; }
-        .section-title { font-size: 1.75rem; color: var(--text-main); margin-bottom: 1.75rem; font-weight: 700; border-bottom: 1px solid var(--card-border); padding-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.75rem; margin-bottom: 3.5rem; }
-        .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.75rem; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
-        .card:hover { transform: translateY(-5px); border-color: var(--accent-blue); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); }
-        .card-header { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.85rem; }
-        .card-header i { font-size: 1.5rem; color: var(--accent-blue); background: var(--badge-bg); padding: 0.6rem; border-radius: 8px; }
-        .card h3 { font-size: 1.25rem; color: var(--text-main); font-weight: 600; }
-        .card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.25rem; flex-grow: 1; }
+        .container { max-width: 1150px; margin: 0 auto; padding: 4rem 1.5rem; }
         
-        /* Multiple Image Gallery Styles */
-        .image-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem; margin-bottom: 1.25rem; }
-        .gallery-img { width: 100%; height: 110px; object-fit: cover; border-radius: 6px; border: 1px solid var(--card-border); transition: all 0.2s ease; cursor: pointer; }
-        .gallery-img:hover { border-color: var(--accent-blue); transform: scale(1.03); }
+        .section-header { margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--card-border); padding-bottom: 1rem; }
+        .section-title { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.02em; display: flex; align-items: center; gap: 0.75rem; }
+        .section-title i { color: var(--cyan-glow); font-size: 1.4rem; }
 
-        .card-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--accent-blue); font-weight: 600; text-decoration: none; font-size: 0.9rem; margin-top: auto; }
-        .card-link:hover { text-decoration: underline; }
+        /* Modern Bento Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.75rem; margin-bottom: 4rem; }
+        .card { 
+            background: var(--surface-card); 
+            border: 1px solid var(--card-border); 
+            border-radius: 16px; 
+            padding: 1.85rem; 
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            backdrop-filter: blur(12px);
+            position: relative;
+        }
+        .card:hover { 
+            transform: translateY(-6px); 
+            border-color: var(--border-hover); 
+            background: var(--surface-hover);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.1); 
+        }
 
-        .about-box { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 2.25rem; margin-bottom: 3.5rem; }
-        .about-box p { color: var(--text-muted); font-size: 1.05rem; }
-        .about-box ul { list-style: none; margin-top: 1.25rem; }
-        .about-box li { margin-bottom: 0.85rem; padding-left: 1.75rem; position: relative; color: var(--text-main); }
-        .about-box li::before { content: "▹"; position: absolute; left: 0; color: var(--accent-blue); font-weight: bold; font-size: 1.2rem; }
+        .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+        .card-icon { 
+            width: 44px; 
+            height: 44px; 
+            border-radius: 10px; 
+            background: rgba(56, 189, 248, 0.08); 
+            border: 1px solid rgba(56, 189, 248, 0.2); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: var(--cyan-glow); 
+            font-size: 1.25rem;
+        }
+        .metric-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3rem 0.65rem;
+            border-radius: 6px;
+            background: rgba(0, 102, 255, 0.15);
+            border: 1px solid rgba(0, 102, 255, 0.3);
+            color: #60A5FA;
+        }
+
+        .card h3 { font-size: 1.25rem; color: var(--text-primary); font-weight: 700; margin-bottom: 0.6rem; }
+        .card p { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem; flex-grow: 1; }
+
+        /* Image Gallery Tiles */
+        .image-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.65rem; margin-bottom: 1.25rem; }
+        .gallery-img { 
+            width: 100%; 
+            height: 115px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            border: 1px solid var(--card-border); 
+            transition: all 0.25s ease; 
+        }
+        .gallery-img:hover { border-color: var(--cyan-glow); transform: scale(1.03); }
+
+        .card-link { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 0.5rem; 
+            color: var(--cyan-glow); 
+            font-weight: 600; 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            transition: gap 0.2s ease;
+        }
+        .card-link i { transition: transform 0.2s ease; }
+        .card-link:hover i { transform: translateX(4px); }
+
+        /* Executive Background Box */
+        .about-box { 
+            background: var(--surface-card); 
+            border: 1px solid var(--card-border); 
+            border-radius: 16px; 
+            padding: 2.5rem; 
+            margin-bottom: 4rem; 
+            backdrop-filter: blur(12px);
+        }
+        .about-box p { color: var(--text-secondary); font-size: 1.05rem; }
+        .about-box ul { list-style: none; margin-top: 1.25rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+        .about-box li { 
+            padding: 1rem; 
+            border-radius: 10px; 
+            background: rgba(255, 255, 255, 0.02); 
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            color: var(--text-primary); 
+            font-size: 0.95rem;
+        }
+        .about-box li strong { color: var(--cyan-glow); display: block; margin-bottom: 0.25rem; }
         
-        .contact-details { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px dashed var(--card-border); display: flex; gap: 2rem; flex-wrap: wrap; }
-        .contact-item { font-size: 0.95rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.6rem; }
-        .contact-item a { color: var(--accent-blue); text-decoration: none; font-weight: 600; }
-        .contact-item a:hover { text-decoration: underline; }
+        .contact-details { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed var(--card-border); display: flex; gap: 2.5rem; flex-wrap: wrap; }
+        .contact-item { font-size: 0.95rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.75rem; }
+        .contact-item i { color: var(--cyan-glow); font-size: 1.1rem; }
+        .contact-item a { color: var(--text-primary); text-decoration: none; font-weight: 600; }
+        .contact-item a:hover { color: var(--cyan-glow); }
 
-        footer { text-align: center; padding: 2.5rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--card-border); }
+        footer { text-align: center; padding: 3rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--card-border); }
     </style>
 </head>
 <body>
 
     <header>
         <div class="header-content">
-            <img src="https://github.com/rcholico.png" alt="Ramon G. Cholico" class="profile-img">
             <div class="header-text">
-                <h1>Ramon G. Cholico</h1>
-                <p>Global Supply Chain Executive | Graduate TA @ Rice University</p>
-                <div class="links">
-                    <a href="https://github.com/rcholico" class="btn btn-outline" target="_blank"><i class="fab fa-github"></i> GitHub Profile</a>
-                    <a href="https://linkedin.com/in/ramon-cholico" class="btn btn-outline" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="mailto:rcholico@hotmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact Me</a>
+                <div class="status-badge">
+                    <span class="status-dot"></span> Rice University TA & M.S. Candidate
                 </div>
+                <h1>Ramon G. Cholico</h1>
+                <p>Global Supply Chain Executive & Data Science Specialist</p>
+                <div class="links">
+                    <a href="https://github.com/rcholico" class="btn btn-outline" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://linkedin.com/in/ramon-cholico" class="btn btn-outline" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="mailto:rcholico@hotmail.com" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                </div>
+            </div>
+            <div class="profile-container">
+                <img src="https://github.com/rcholico.png" alt="Ramon G. Cholico" class="profile-img">
             </div>
         </div>
     </header>
 
     <div class="container">
+        
         <div class="about-box">
-            <h2 class="section-title"><i class="fas fa-user-shield" style="color: var(--accent-blue);"></i> Executive Background</h2>
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-user-astronaut"></i> Executive Leadership</h2>
+            </div>
             <p>Executive leader with 20+ years optimizing global transportation networks, managing $88M+ logistics spend, and driving data-driven decisions in regulated industries. Currently completing my Master's in Engineering Management & Leadership (Data Science Focus) at Rice University.</p>
             <ul>
-                <li><strong>Global Logistics & Sourcing:</strong> Freight Auditor Procurement, Carrier RFQs, Cross-Border Linehaul Injection, Mode Shifting, Governance.</li>
-                <li><strong>Analytics Stack:</strong> Python (Pandas, Scikit-Learn), K-Means Machine Learning, SQL, ProShip APIs, Financial Sensitivity Modeling.</li>
-                <li><strong>Academic Leadership:</strong> TA for RCEL-506 @ Rice University, guiding students in data science for engineering management and AI workflows.</li>
+                <li>
+                    <strong>Global Logistics & Sourcing</strong>
+                    Freight Auditor Procurement, Carrier RFQs, Cross-Border Linehaul Injection, Mode Shifting, & Governance.
+                </li>
+                <li>
+                    <strong>Analytics & AI Stack</strong>
+                    Python (Pandas, Scikit-Learn), K-Means Machine Learning, SQL, ProShip APIs, Financial Sensitivity Modeling.
+                </li>
+                <li>
+                    <strong>Academic Leadership</strong>
+                    TA for RCEL-506 @ Rice University, guiding students in data science for engineering management and AI workflows.
+                </li>
             </ul>
             
             <div class="contact-details">
                 <div class="contact-item">
-                    <i class="fas fa-envelope" style="color: var(--accent-blue);"></i>
-                    <span><strong>Personal Email:</strong> <a href="mailto:rcholico@hotmail.com">rcholico@hotmail.com</a></span>
+                    <i class="fas fa-envelope"></i>
+                    <span>Personal: <a href="mailto:rcholico@hotmail.com">rcholico@hotmail.com</a></span>
                 </div>
                 <div class="contact-item">
-                    <i class="fas fa-university" style="color: var(--accent-blue);"></i>
-                    <span><strong>Rice University Email:</strong> <a href="mailto:rcholico@rice.edu">rcholico@rice.edu</a></span>
+                    <i class="fas fa-university"></i>
+                    <span>Rice University: <a href="mailto:rcholico@rice.edu">rcholico@rice.edu</a></span>
                 </div>
             </div>
         </div>
 
-        <h2 class="section-title"><i class="fas fa-cubes" style="color: var(--accent-blue);"></i> Featured Executive Projects</h2>
+        <div class="section-header">
+            <h2 class="section-title"><i class="fas fa-layer-group"></i> Featured Case Studies</h2>
+        </div>
+
         <div class="grid">
 
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <i class="fas fa-calculator"></i>
-                        <h3>Global Freight Auditor Selection</h3>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fas fa-calculator"></i></div>
+                        <span class="metric-tag">$23M Spend</span>
                     </div>
+                    <h3>Global Freight Auditor Selection</h3>
                     <p>Evaluated multi-currency EMEA freight audit solutions ($23M spend) and enforced strict data ownership/privacy governance.</p>
-                    
-                    <!-- 2 Preview Images Example -->
                     <div class="image-gallery">
-                        <img src="images/freight-auditor-matrix.png" alt="Evaluation Matrix" class="gallery-img" onerror="this.style.display='none'">
-                        <img src="images/freight-auditor-flow.png" alt="Data Flowchart" class="gallery-img" onerror="this.style.display='none'">
+                        <img src="images/freight-auditor-matrix.png" alt="Matrix" class="gallery-img" onerror="this.style.display='none'">
+                        <img src="images/freight-auditor-flow.png" alt="Data Flow" class="gallery-img" onerror="this.style.display='none'">
                     </div>
                 </div>
-                <a href="https://github.com/rcholico/Freight-Auditor-Selection" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
+                <a href="https://github.com/rcholico/Freight-Auditor-Selection" class="card-link" target="_blank">Explore Repository <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <i class="fas fa-user-md"></i>
-                        <h3>Orthopedic Implants Freight Spend Optimization</h3>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fas fa-user-md"></i></div>
+                        <span class="metric-tag">$1.36M Savings</span>
                     </div>
+                    <h3>Orthopedic Implants Freight Optimization</h3>
                     <p>Express-to-Ground mode shifts & Priority Overnight downgrades from Central Texas ($1.36M annualized savings).</p>
-                    
                     <div class="image-gallery">
-                        <img src="images/ortho-savings-chart.png" alt="Savings Chart" class="gallery-img" onerror="this.style.display='none'">
-                        <img src="images/ortho-mode-shift.png" alt="Mode Shift Diagram" class="gallery-img" onerror="this.style.display='none'">
+                        <img src="images/ortho-savings-chart.png" alt="Savings" class="gallery-img" onerror="this.style.display='none'">
+                        <img src="images/ortho-mode-shift.png" alt="Shift" class="gallery-img" onerror="this.style.display='none'">
                     </div>
                 </div>
-                <a href="https://github.com/rcholico/Orthopedic-Implants-Freight-Spend-Optimization" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
+                <a href="https://github.com/rcholico/Orthopedic-Implants-Freight-Spend-Optimization" class="card-link" target="_blank">Explore Repository <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <i class="fas fa-truck-cross-border"></i>
-                        <h3>US-Canada Direct Parcel Injection</h3>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fas fa-truck-cross-border"></i></div>
+                        <span class="metric-tag">-19.7% CPS</span>
                     </div>
+                    <h3>US-Canada Direct Parcel Injection</h3>
                     <p>Sourced direct cross-border linehaul injection with Purolator out of DFW (-19.7% cost-per-shipment).</p>
-                    
                     <div class="image-gallery">
-                        <img src="images/purolator-map.png" alt="Linehaul Route Map" class="gallery-img" onerror="this.style.display='none'">
-                        <img src="images/purolator-cost.png" alt="Cost Per Shipment Breakdown" class="gallery-img" onerror="this.style.display='none'">
+                        <img src="images/purolator-map.png" alt="Map" class="gallery-img" onerror="this.style.display='none'">
+                        <img src="images/purolator-cost.png" alt="Cost Breakdown" class="gallery-img" onerror="this.style.display='none'">
                     </div>
                 </div>
-                <a href="https://github.com/rcholico/US-Canada-CrossBorder-Purolator-Injection" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
+                <a href="https://github.com/rcholico/US-Canada-CrossBorder-Purolator-Injection" class="card-link" target="_blank">Explore Repository <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <i class="fas fa-ship"></i>
-                        <h3>Global Forwarder Sourcing RFQ</h3>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fas fa-ship"></i></div>
+                        <span class="metric-tag">$8.43M Savings</span>
                     </div>
+                    <h3>Global Forwarder Sourcing RFQ</h3>
                     <p>Benchmarked four Freight Forwarders across 826 containers ($8.43M freight savings, -65%).</p>
-                    
                     <div class="image-gallery">
-                        <img src="images/rfq-rates.png" alt="Carrier Benchmark" class="gallery-img" onerror="this.style.display='none'">
-                        <img src="images/rfq-savings.png" alt="Savings Allocation" class="gallery-img" onerror="this.style.display='none'">
+                        <img src="images/rfq-rates.png" alt="Benchmark" class="gallery-img" onerror="this.style.display='none'">
+                        <img src="images/rfq-savings.png" alt="Savings" class="gallery-img" onerror="this.style.display='none'">
                     </div>
                 </div>
-                <a href="https://github.com/rcholico/Global-Freight-Forwarder-Procurement-RFQ" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
+                <a href="https://github.com/rcholico/Global-Freight-Forwarder-Procurement-RFQ" class="card-link" target="_blank">Explore Repository <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <i class="fas fa-warehouse"></i>
-                        <h3>DC Location Optimization (ML)</h3>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fas fa-warehouse"></i></div>
+                        <span class="metric-tag">K-Means ML</span>
                     </div>
+                    <h3>DC Location Optimization (ML)</h3>
                     <p>Unsupervised K-Means clustering on 378K+ shipments to redesign an orthopedic footwear distribution network.</p>
-                    
                     <div class="image-gallery">
-                        <img src="images/kmeans-clusters.png" alt="K-Means Clusters" class="gallery-img" onerror="this.style.display='none'">
-                        <img src="images/dc-network.png" alt="DC Centroids" class="gallery-img" onerror="this.style.display='none'">
+                        <img src="images/kmeans-clusters.png" alt="Clusters" class="gallery-img" onerror="this.style.display='none'">
+                        <img src="images/dc-network.png" alt="Centroids" class="gallery-img" onerror="this.style.display='none'">
                     </div>
                 </div>
-                <a href="https://github.com/rcholico/DC-Relocation" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
+                <a href="https://github.com/rcholico/DC-Relocation" class="card-link" target="_blank">Explore Repository <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <i class="fas fa-plane"></i>
-                        <h3>US Zone Skipping & Air-Bulk Injection</h3>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fas fa-plane"></i></div>
+                        <span class="metric-tag">4–6 Day SLA</span>
                     </div>
+                    <h3>US Zone Skipping & Air-Bulk Injection</h3>
                     <p>Direct air-bulk and intermodal zone skipping out of San Diego to East Coast (4–6 day transit times).</p>
-                    
                     <div class="image-gallery">
-                        <img src="images/zoneskip-map.png" alt="Air-Bulk Routes" class="gallery-img" onerror="this.style.display='none'">
-                        <img src="images/zoneskip-transit.png" alt="SLA Timeline" class="gallery-img" onerror="this.style.display='none'">
+                        <img src="images/zoneskip-map.png" alt="Routes" class="gallery-img" onerror="this.style.display='none'">
+                        <img src="images/zoneskip-transit.png" alt="Timeline" class="gallery-img" onerror="this.style.display='none'">
                     </div>
                 </div>
-                <a href="https://github.com/rcholico/US-Zone-Skipping-Air-Bulk-Optimization" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
+                <a href="https://github.com/rcholico/US-Zone-Skipping-Air-Bulk-Optimization" class="card-link" target="_blank">Explore Repository <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <i class="fas fa-gas-pump"></i>
-                        <h3>Fuel Surcharge Sensitivity Model</h3>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fas fa-gas-pump"></i></div>
+                        <span class="metric-tag">$271K FSC Exposure</span>
                     </div>
+                    <h3>Fuel Surcharge Sensitivity Model</h3>
                     <p>Financial risk model tracking Middle East conflict diesel spikes and quantifying $271K+ in FSC exposure.</p>
-                    
                     <div class="image-gallery">
-                        <img src="images/fuel-model.png" alt="FSC Sensitivity" class="gallery-img" onerror="this.style.display='none'">
-                        <img src="images/fuel-spikes.png" alt="Diesel Price Curve" class="gallery-img" onerror="this.style.display='none'">
+                        <img src="images/fuel-model.png" alt="Model" class="gallery-img" onerror="this.style.display='none'">
+                        <img src="images/fuel-spikes.png" alt="Spikes" class="gallery-img" onerror="this.style.display='none'">
                     </div>
                 </div>
-                <a href="https://github.com/rcholico/Geopolitical-Risk-Fuel-Sensitivity-Model" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
+                <a href="https://github.com/rcholico/Geopolitical-Risk-Fuel-Sensitivity-Model" class="card-link" target="_blank">Explore Repository <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="card">
                 <div>
-                    <div class="card-header">
-                        <i class="fas fa-globe-americas"></i>
-                        <h3>Multimodal Transportation Analysis</h3>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fas fa-globe-americas"></i></div>
+                        <span class="metric-tag">-21 Days Lead Time</span>
                     </div>
+                    <h3>Multimodal Transportation Analysis</h3>
                     <p>All-Boat vs. Intermodal Rail trade-off modeling across transatlantic trade lanes (-21 days transit time).</p>
-                    
                     <div class="image-gallery">
-                        <img src="images/multimodal-tradeoff.png" alt="Cost vs Transit" class="gallery-img" onerror="this.style.display='none'">
-                        <img src="images/rail-vs-boat.png" alt="Lane Comparison" class="gallery-img" onerror="this.style.display='none'">
+                        <img src="images/multimodal-tradeoff.png" alt="Tradeoff" class="gallery-img" onerror="this.style.display='none'">
+                        <img src="images/rail-vs-boat.png" alt="Comparison" class="gallery-img" onerror="this.style.display='none'">
                     </div>
                 </div>
-                <a href="https://github.com/rcholico/International-Freight-Network-Analysis" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
-            </div>
-
-            <div class="card">
-                <div>
-                    <div class="card-header">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>US Parcel Network Analytics</h3>
-                    </div>
-                    <p>Python-driven carrier analytics evaluating parcel operational datasets, zone billing, and Dim weight impact.</p>
-                    
-                    <div class="image-gallery">
-                        <img src="images/dim-weight-chart.png" alt="Dim Weight Analysis" class="gallery-img" onerror="this.style.display='none'">
-                        <img src="images/zone-billing.png" alt="Zone Cost Matrix" class="gallery-img" onerror="this.style.display='none'">
-                    </div>
-                </div>
-                <a href="https://github.com/rcholico/Parcel-SupplyChain-Analytics" class="card-link" target="_blank">View Repository <i class="fas fa-arrow-right"></i></a>
-            </div>
-
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2026 Ramon G. Cholico</p>
-    </footer>
-
-</body>
-</html>
+                <a href="https://github.com/rcholico/International-Freight-Network-Analysis" class="card-link" target="_blank">Explore Repository <i class="fas fa-arrow-right"></i></a>
