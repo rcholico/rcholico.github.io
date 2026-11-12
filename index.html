@@ -398,6 +398,19 @@ dialog p {
 .modal-actions {
     margin-top:20px
 }
+    /* Professional portrait in the homepage hero */
+    .hero-portrait {
+        width: min(100%, 280px);
+        height: auto;
+        display: block;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 7px solid #fff;
+        box-shadow: 0 14px 35px rgba(22,56,82,.16);
+    }
+
+
 @media(max-width:950px) {
     .projects {
         grid-template-columns:repeat(2,minmax(0,1fr))
@@ -429,16 +442,6 @@ dialog p {
     .hero-art {
         min-height:180px
     }
-    /* Professional portrait in the homepage hero */
-    .hero-portrait {
-        width: min(100%, 280px);
-        aspect-ratio: 1;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 7px solid #fff;
-        box-shadow: 0 14px 35px rgba(22,56,82,.16);
-    }
-
     .hero-art .symbol {
         font-size:6rem
     }
