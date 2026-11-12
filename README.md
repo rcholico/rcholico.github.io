@@ -1,4 +1,4 @@
-# Ramon G. Cholico
+# Ramon Cholico
 ### Global Supply Chain Executive | Graduate Teaching Assistant @ Rice University
 
 Welcome to my personal portfolio. I bridge executive supply chain leadership with modern data science, machine learning, and AI technologies.
