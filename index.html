@@ -429,6 +429,16 @@ dialog p {
     .hero-art {
         min-height:180px
     }
+    /* Professional portrait in the homepage hero */
+    .hero-portrait {
+        width: min(100%, 280px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 7px solid #fff;
+        box-shadow: 0 14px 35px rgba(22,56,82,.16);
+    }
+
     .hero-art .symbol {
         font-size:6rem
     }
@@ -522,16 +532,17 @@ dialog p {
        </a>
       </div>
      </div>
-     <div aria-label="Logistics and data analytics illustration" class="hero-art" role="img">
-      <div class="symbol">
-       <i class="fa-solid fa-chart-line">
-       </i>
-       <i class="fa-solid fa-box">
-       </i>
-      </div>
-      <small>
-       SUPPLY CHAIN × DATA SCIENCE
-      </small>
+     <!-- GitHub avatar displayed in the hero -->
+     <div class="hero-art">
+      <img
+       class="hero-portrait"
+       src="https://github.com/rcholico.png?size=560"
+       alt="Professional portrait of Ramon Cholico"
+       width="280"
+       height="280"
+       decoding="async"
+      />
+      <small>SUPPLY CHAIN × DATA SCIENCE</small>
      </div>
     </div>
    </section>
