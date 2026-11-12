@@ -499,6 +499,29 @@ dialog p {
     .section h2 {
         font-size:1.7rem
     }
+    /* Center the Featured Case Studies introduction and filters on phones. */
+    #projects .section-head {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+    }
+    #projects .section-head > div:first-child {
+        width: 100%;
+        text-align: center;
+    }
+    #projects .section-lead {
+        margin: 12px auto 0;
+        max-width: 340px;
+    }
+    #projects .filters {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
     .about-panel {
         padding:22px
     }
