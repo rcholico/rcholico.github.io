@@ -411,6 +411,18 @@ dialog p {
     }
 
 
+
+/* Project thumbnail fallback: no additional image file required */
+.parcel-analytics-art {
+    width: 100%; height: 100%; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 14px;
+    background: linear-gradient(135deg, #e6f3f8 0%, #f7fbfd 55%, #e6f3ef 100%);
+    color: var(--blue);
+}
+.parcel-analytics-art .parcel-icons {display:flex; align-items:center; gap:20px; font-size:3.6rem}
+.parcel-analytics-art .parcel-icons i:nth-child(2) {color:var(--accent); font-size:2rem}
+.parcel-analytics-art small {font-size:.73rem; font-weight:800; letter-spacing:.1em; color:var(--muted)}
+
 @media(max-width:950px) {
     .projects {
         grid-template-columns:repeat(2,minmax(0,1fr))
@@ -574,7 +586,7 @@ dialog p {
      <strong>
       <i class="fa-solid fa-diagram-project">
       </i>
-      8
+      9
      </strong>
      <span>
       Featured case studies
@@ -883,6 +895,40 @@ dialog p {
          <i class="fa-brands fa-github">
          </i>
          Repository
+        </a>
+       </div>
+      </div>
+     </article>
+     <!-- PARCEL SUPPLY CHAIN ANALYTICS: ninth featured project -->
+     <article class="project-card" data-category="Analytics" tabindex="0">
+      <div class="project-visual">
+       <div class="parcel-analytics-art" role="img" aria-label="Parcel shipping analytics illustration with package and chart icons">
+        <div class="parcel-icons" aria-hidden="true">
+         <i class="fa-solid fa-box"></i>
+         <i class="fa-solid fa-arrow-trend-up"></i>
+         <i class="fa-solid fa-chart-column"></i>
+        </div>
+        <small>PARCEL NETWORK ANALYTICS</small>
+       </div>
+      </div>
+      <div class="project-body">
+       <div class="project-meta">
+        <span class="pill">Analytics</span>
+        <span class="metric">Python / Pandas</span>
+       </div>
+       <h3>Parcel Supply Chain Analytics</h3>
+       <p>Analyzed parcel shipping costs, dimensional-weight billing, transit SLAs, and regional shipment density using Python.</p>
+       <div class="project-actions">
+        <button class="details-btn" type="button"
+         data-title="Parcel Supply Chain Analytics"
+         data-metric="Python / Pandas"
+         data-desc="Analyzed parcel shipping costs, dimensional-weight billing, transit SLAs, and regional shipment density using Python."
+         data-detail="Examined DIM-versus-actual-weight cost drivers, Ground and air-service transit performance, and geographic delivery density to identify network improvement opportunities."
+         data-repo="https://github.com/rcholico/Parcel-SupplyChain-Analytics">
+         Quick view <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </button>
+        <a href="https://github.com/rcholico/Parcel-SupplyChain-Analytics" target="_blank" rel="noopener noreferrer" aria-label="View Parcel Supply Chain Analytics repository">
+         <i class="fa-brands fa-github"></i> Repository
         </a>
        </div>
       </div>
